@@ -1,0 +1,59 @@
+Hospital Management System — Production Patch (About + Contact Us)
+==================================================================
+
+ROOT CAUSE
+----------
+This is an ASP.NET Web Application (.NET Framework 4.8). Page code-behind is
+compiled into bin\HospitalManagementSystem.Web.dll.
+
+About.aspx / ContactUs.aspx alone are NOT enough on the server.
+If the .aspx files are uploaded without the NEW DLL that contains:
+
+  HospitalManagementSystem.Web.About
+  HospitalManagementSystem.Web.ContactUs
+
+ASP.NET cannot create the page type and returns Runtime Error / HTTP 500.
+
+This project does NOT use *.designer.cs files (same pattern as Login/Register).
+Missing designers are NOT the bug.
+
+UPLOAD THESE FILES ONLY (to site root HospitalManager)
+------------------------------------------------------
+From this folder:
+
+  About.aspx                              ->  /About.aspx
+  ContactUs.aspx                          ->  /ContactUs.aspx
+  Site.Master                             ->  /Site.Master
+  bin\HospitalManagementSystem.Web.dll    ->  /bin/HospitalManagementSystem.Web.dll
+
+DO NOT UPLOAD
+-------------
+- Web.config              (keeps production DB connection + SMTP)
+- *.aspx.cs               (not used at runtime in Web Application model)
+- *.csproj / source
+- obj/
+- local SQL files
+- .bak files
+
+FILEZILLA CHECKLIST
+-------------------
+1. Connect to the live HospitalManager site root.
+2. Backup current live files first (download copies):
+     Site.Master
+     bin/HospitalManagementSystem.Web.dll
+3. Upload/overwrite ONLY the 4 files listed above.
+4. Confirm remote timestamps updated.
+5. Test while logged in:
+     /About.aspx
+     /ContactUs.aspx
+     /Default.aspx
+     /Pages/Patients/List.aspx
+6. If still 500: recycle the IIS Application Pool for HospitalManager, then retest.
+
+LOCAL BUILD OUTPUT
+------------------
+Full Release DLL:
+  HospitalManagementSystem.Web\bin\HospitalManagementSystem.Web.dll
+
+This patch package:
+  Deployment\ProductionPatch_About_ContactUs\

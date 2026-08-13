@@ -1,0 +1,7 @@
+c:\Users\malak\Desktop\myprojects\HospitalManagementSystem\HospitalManagementSystem.Web\bin\HospitalManagementSystem.Web.dll.config
+c:\Users\malak\Desktop\myprojects\HospitalManagementSystem\HospitalManagementSystem.Web\bin\HospitalManagementSystem.Web.dll
+c:\Users\malak\Desktop\myprojects\HospitalManagementSystem\HospitalManagementSystem.Web\bin\HospitalManagementSystem.Web.pdb
+c:\Users\malak\Desktop\myprojects\HospitalManagementSystem\HospitalManagementSystem.Web\obj\Release\HospitalManagementSystem.Web.csproj.AssemblyReference.cache
+c:\Users\malak\Desktop\myprojects\HospitalManagementSystem\HospitalManagementSystem.Web\obj\Release\HospitalManagementSystem.Web.csproj.CoreCompileInputs.cache
+c:\Users\malak\Desktop\myprojects\HospitalManagementSystem\HospitalManagementSystem.Web\obj\Release\HospitalManagementSystem.Web.dll
+c:\Users\malak\Desktop\myprojects\HospitalManagementSystem\HospitalManagementSystem.Web\obj\Release\HospitalManagementSystem.Web.pdb

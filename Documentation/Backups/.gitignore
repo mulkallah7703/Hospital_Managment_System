@@ -1,0 +1,5 @@
+# Backup files (*.bak) are created by SQL Server on the database server.
+# Do not commit .bak files or place them in the web deployment ZIP.
+# See ../Database-Backup-Restore.md for the full procedure.
+*
+!.gitignore

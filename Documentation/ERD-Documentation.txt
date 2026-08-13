@@ -1,0 +1,86 @@
+Hospital Management System — ERD Documentation
+================================================
+
+Database name:
+  malakallah13137
+
+Source of truth:
+  Live SQL Server Express metadata
+  Cross-checked with Database/HospitalDatabase.sql
+  Generated for instructor submission (Criterion #9)
+
+------------------------------------------------
+TABLES (8)
+------------------------------------------------
+1. Patients
+2. Doctors
+3. Departments
+4. Appointments
+5. MedicalRecords
+6. Prescriptions
+7. Bills
+8. Users
+
+------------------------------------------------
+PRIMARY KEYS
+------------------------------------------------
+Patients.PatientID
+Doctors.DoctorID
+Departments.DepartmentID
+Appointments.AppointmentID
+MedicalRecords.RecordID
+Prescriptions.PrescriptionID
+Bills.BillID
+Users.UserID
+
+------------------------------------------------
+UNIQUE CONSTRAINTS
+------------------------------------------------
+Patients.NationalID   (UNIQUE, NOT NULL)
+Users.UserName        (UNIQUE, NOT NULL)
+
+------------------------------------------------
+FOREIGN KEYS (exactly 8 — verified live)
+------------------------------------------------
+1. FK_Appointments_Patients
+   Appointments.PatientID  →  Patients.PatientID
+   Cardinality: Patients (1) —— Appointments (N)
+
+2. FK_Appointments_Doctors
+   Appointments.DoctorID   →  Doctors.DoctorID
+   Cardinality: Doctors (1) —— Appointments (N)
+
+3. FK_Bills_Patients
+   Bills.PatientID         →  Patients.PatientID
+   Cardinality: Patients (1) —— Bills (N)
+
+4. FK_Doctors_Departments
+   Doctors.DepartmentID    →  Departments.DepartmentID
+   Cardinality: Departments (1) —— Doctors (N)
+
+5. FK_MedicalRecords_Patients
+   MedicalRecords.PatientID → Patients.PatientID
+   Cardinality: Patients (1) —— MedicalRecords (N)
+
+6. FK_MedicalRecords_Doctors
+   MedicalRecords.DoctorID  → Doctors.DoctorID
+   Cardinality: Doctors (1) —— MedicalRecords (N)
+
+7. FK_Prescriptions_Patients
+   Prescriptions.PatientID  → Patients.PatientID
+   Cardinality: Patients (1) —— Prescriptions (N)
+
+8. FK_Prescriptions_Doctors
+   Prescriptions.DoctorID   → Doctors.DoctorID
+   Cardinality: Doctors (1) —— Prescriptions (N)
+
+------------------------------------------------
+NOTES
+------------------------------------------------
+- Users has no foreign keys to clinical tables (authentication only).
+- No additional relationships were invented.
+- PK columns are highlighted in yellow on ERD.png / ERD.pdf.
+- FK columns are highlighted in blue on ERD.png / ERD.pdf.
+- Diagram files:
+    Documentation/ERD.png
+    Documentation/ERD.pdf
